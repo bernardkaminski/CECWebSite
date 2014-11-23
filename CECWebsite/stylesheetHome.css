@@ -1,0 +1,126 @@
+html ,body
+{
+	background-color: white;
+	font-family:"Helvetica", "Helvetica Neue", "Arial";
+	height: 100%;
+
+}
+.top
+{
+	height: 30%;
+}
+.topBar
+{
+	background-color: black;
+	height: 90%;
+}
+.logoImg
+{
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left:  auto;
+	margin-right: auto;
+	width: auto;
+	height: 90%;
+}
+#countdown
+{
+	font-weight: bold;
+	float: right;
+	opacity: .5;   
+}
+#count
+{
+	font-weight: bold;
+	float: right;
+	opacity: .5;   
+}
+
+.nav-tabs, .nav-pills {
+	margin-top: 15%;
+    text-align:center;
+    border-bottom: none;
+    float: right;    
+}
+.nav-tabs > li > a {
+    text-align: center;
+    
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color:  red;
+   
+}
+.redline
+{
+	background-color: red;
+	height: 10%;
+}
+.middle
+{
+	height: 70%;
+	background-image:  url('McGill_Arts_Building2.jpg');
+	background-size: cover;
+
+}
+.slides
+{
+	height: 100%;
+}
+#carousel-example-generic
+{
+	height: 100%;
+}
+.carousel-inner
+{
+	height: 100%;
+}
+.item
+{
+	height: 100%;
+}
+.carousel-inner > .item > img 
+{
+    margin: 0 auto;
+    height: 100%;
+}
+.item img
+{
+    
+
+} 
+.bottom
+{
+	height: 35%;
+	
+}
+.colspon
+{
+	height: 100%;
+}
+.sponTitle
+{
+	height: 20%;
+}
+.ourSponsors
+{
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 3em;
+
+}
+.bottomSpon
+{
+	height: 80%;
+}
+.sponimg
+{
+	display: block;
+	margin: auto;
+	width: 90%;
+	height: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}

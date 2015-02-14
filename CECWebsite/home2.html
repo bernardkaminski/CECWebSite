@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link type="text/css" rel="stylesheet" href="stylesheetHome.css"/>
+		<link type="text/css" rel="stylesheet" href="stylehome2.css"/>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script>
@@ -39,10 +39,11 @@
 						        else{
 						        		document.getElementById('countdown').innerHTML += seconds + ''
 						        	};
-						        d
+						        
 						    }
 
 						    timer = setInterval(showRemaining, 1000);
+
 		</script>
 		<title>CEC McGill</title>
 	</head>
@@ -50,112 +51,44 @@
 
 	<body>
 		<div class="ontop">
+			<div class="row logo">
+		        <div class="col-xs-12 col-md-12">
+		        	<img src="McGill_University_CoA.svg.png" style="width:100%;">
+		        	
+		        </div>
+		    </div>
+
 		</div>
 
 
 		<div class="top">
-			<div class="row topBar">
-		        <div class="col-xs-2 col-md-2" style="height:100%"><img class="logoImg"src="McGill_University_CoA.svg.png"></div>
-		        <div class="col-xs-10 col-md-10">
-		        	<h3 id="count" style="color:white" ></h3>
-					<h3 id="countdown" style="color:white"></h3>
-		        	<ul class="nav nav-tabs " role="tablist" >
-                  		
-                  		<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Home <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					            <li><a href="#">Inbox</a></li>
-					            <li><a href="#">Drafts</a></li>
-					            <li><a href="#">Sent Items</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Trash</a></li>
-					        </ul>
-                  		</li>
-                  		
-                  		<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">About <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					            <li><a href="#">Inbox</a></li>
-					            <li><a href="#">Drafts</a></li>
-					            <li><a href="#">Sent Items</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Trash</a></li>
-					        </ul>
-					    </li>
+				<div class="timer">
+				<h3 id="countdown" style="color:red;margin-top:0px;margin-bottom:1em;"></h3>
+				</div>
+      		
+		</div>
+		
+		<div class="row topBar" id="topBar" style="height:10%;">
+		        <div id="pills" class="col-xs-12 col-md-12" style="margin-bottom:4px;">
+		        	
+		        	<ul class="nav nav-pills nav-justified">
 
-                  		<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Events <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					            <li><a href="#">Inbox</a></li>
-					            <li><a href="#">Drafts</a></li>
-					            <li><a href="#">Sent Items</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Trash</a></li>
-					        </ul>
-					    </li>
-
-					    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Attending <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					            <li><a href="#">Inbox</a></li>
-					            <li><a href="#">Drafts</a></li>
-					            <li><a href="#">Sent Items</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Trash</a></li>
-					        </ul>
-					    </li>
-
-					    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sponsors <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					            <li><a href="#">Inbox</a></li>
-					            <li><a href="#">Drafts</a></li>
-					            <li><a href="#">Sent Items</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Trash</a></li>
-					        </ul>
-					    </li>
-
-					    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Social Media <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					            <li><a href="#">Inbox</a></li>
-					            <li><a href="#">Drafts</a></li>
-					            <li><a href="#">Sent Items</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Trash</a></li>
-					        </ul>
-					    </li>
-
-					    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registration <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					            <li><a href="#">Inbox</a></li>
-					            <li><a href="#">Drafts</a></li>
-					            <li><a href="#">Sent Items</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Trash</a></li>
-					        </ul>
-					    </li>
-
-					    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Contact Us <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					            <li><a href="#">Inbox</a></li>
-					            <li><a href="#">Drafts</a></li>
-					            <li><a href="#">Sent Items</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Trash</a></li>
-					        </ul>
-					    </li>
+		        		<li role="presentation" class="active"><a href="#">Home</a></li>
+		        		<li role="presentation" ><a href="about.html">About</a></li>
+		        		<li role="presentation" ><a href="events.html">Events</a></li>
+		        		<li role="presentation"><a href="attending.html">Attending</a></li>
+		        		<li role="presentation"><a href="sponsors.html">Sponsors</a></li>
+                  		<li role="presentation"><a href="socialMedia.html">Social Media</a></li>
+                  		<li role="presentation"><a href="registration.html">Registration</a></li>
+                  		<li role="presentation"><a href="contact.html">Contact Us</a></li>
             		</ul>
 
 
 		        </div>
       		</div>
 
-      		<div class="row redline">
-      			<div class="col-xs-12 col-md-12 ">
-
-      			</div>
-
-      		</div>
+      	<div class="row rest">
       		
-      		
-		</div>
-		<div class="row middle">
 			<div class="col-xs-3 col-md-3"></div>
 			<div class="col-xs-6 col-md-6 slides">
 		    	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -208,12 +141,9 @@
 		              </a>
 		        </div>
 			</div>
-			<div class="col-xs-3 col-md-3"></div>
-      	</div>
-      	
-      	<div class="row bottom">
 			
-			<div class="col-xs-12 col-md-12 colspon">
+
+			<div class="col-xs-12 col-md-12 colspon" style="background-color:rgba(0, 0, 0, 0.5)">
 				
 				<div class="row sponTitle">
 		      		<div class="col-xs-12 col-md-12 ourSponsors">OUR SPONSORS</div>
@@ -227,8 +157,43 @@
 		      	</div>
 
 		    </div>
+
+		    <div class="col-xs-12 col-md-12 colspon" style="background-color:black">
+				
+				<div class="row social media">
+		      		<div class="col-xs-4 col-md-4 bubbles">
+			      		<div class="row">
+			      			<div class="col-xs-4 col-md-4">
+			      				<img src="facebook-icon small.png">
+			      			</div>
+
+			      			<div class="col-xs-4 col-md-4">
+			      				<img src="instagram-icon small.png">
+			      			</div>
+
+			      			<div class="col-xs-4 col-md-4">
+			      				<img src="twitter-icon small.png">
+			      			</div>
+			      		</div>
+		      		</div>
+		      		
+		      		<div class="col-xs-4 col-md-4 ">
+		      			<div class="row">
+			      			<div class="col-xs-12 col-md-12">
+		      					<span class="glyhelp"><span class="glyphicon glyphicon-earphone" style="font-size: 3em;"></span></span>
+		      				</div>
+		      			</div>
+		      			
+		      		</div>
+		      		<div class="col-xs-4 col-md-4 ">
+		      			<span class="glyhelp"><span class="glyphicon glyphicon-envelope" style="font-size: 3em;"></span></span>
+		      			
+		      		</div>
+		      	</div>
+		    </div>
 		    
       	</div>
 
 	</body>
+
 </html>

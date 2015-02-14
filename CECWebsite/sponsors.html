@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="stylehome2.css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script>
+						var end = new Date('02/19/2016 10:1 AM');
+
+						    var _second = 1000;
+						    var _minute = _second * 60;
+						    var _hour = _minute * 60;
+						    var _day = _hour * 24;
+						    var timer;
+
+						    function showRemaining() {
+						        var now = new Date();
+						        var distance = end - now;
+						        if (distance < 0) {
+
+						            clearInterval(timer);
+						            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+						            return;
+						        }
+						        var days = Math.floor(distance / _day);
+						        var hours = Math.floor((distance % _day) / _hour);
+						        var minutes = Math.floor((distance % _hour) / _minute);
+						        var seconds = Math.floor((distance % _minute) / _second);
+
+						        document.getElementById('countdown').innerHTML = 'countdown<br>'+days + ':';
+						        document.getElementById('countdown').innerHTML += hours + ':';
+						        document.getElementById('countdown').innerHTML += minutes + ':';
+						        if (seconds<10) 
+						        	{
+						        		document.getElementById('countdown').innerHTML += '0'+seconds  ;
+						        	} 
+						        else{
+						        		document.getElementById('countdown').innerHTML += seconds + ''
+						        	};
+						        
+						    }
+
+						    timer = setInterval(showRemaining, 1000);
+
+		</script>
+		<script>
+			function myFunction(src) 
+			{
+    			 document.getElementById('aboutpic').src = src;
+    			if (src=='McGill_University_CoA.svg.png') 
+			 	{
+			 		document.getElementById('aboutpic').style.width = '50%';
+
+			 	} 
+			 	else
+			 	{
+			 		document.getElementById('aboutpic').style.width = '100%';
+			 	};
+			}
+
+			function _getAllFilesFromFolder(dir) 
+			{
+				
+				    var filesystem = require("fs");
+				    var results = [];
+
+				    filesystem.readdirSync(dir).forEach(function(file) {
+
+				        file = dir+'/'+file;
+				        var stat = filesystem.statSync(file);
+
+				        if (stat && stat.isDirectory()) {
+				            results = results.concat(_getAllFilesFromFolder(file))
+				        } else results.push(file);
+
+				    });
+
+				    return results;
+
+			}
+		</script>
+		<title>CEC McGill</title>
+	</head>
+	
+
+	<body>
+		<div class="ontop">
+			<div class="row logo">
+		        <div class="col-xs-12 col-md-12">
+		        	<img src="McGill_University_CoA.svg.png" style="width:100%;">
+		        	
+		        </div>
+		    </div>
+
+		</div>
+
+
+		<div class="top">
+				<div class="timer">
+				<h3 id="countdown" style="color:red;margin-top:0px;margin-bottom:1em;"></h3>
+				</div>
+      		
+		</div>
+		
+		<div class="row topBar" id="topBar" style="height:10%;">
+		        <div id="pills" class="col-xs-12 col-md-12" style="margin-bottom:4px;">
+		        	
+		        	<ul class="nav nav-pills nav-justified">
+
+		        		<li role="presentation" ><a href="home2.html">Home</a></li>
+		        		<li role="presentation" ><a href="about.html">About</a></li>
+		        		<li role="presentation" ><a href="events.html">Events</a></li>
+		        		<li role="presentation" ><a href="attending.html">Attending</a></li>
+		        		<li role="presentation" class="active"><a href="#">Sponsors</a></li>
+                  		<li role="presentation"><a href="socialMedia.html">Social Media</a></li>
+                  		<li role="presentation"><a href="registration.html">Registration</a></li>
+                  		<li role="presentation"><a href="contact.html">Contact Us</a></li>
+
+            		</ul>
+
+
+		        </div>
+      		</div>
+
+      	<div class="row rest">
+      		
+			
+			<div class="col-xs-12 col-md-12 ">
+				<div class="row sponTitle">
+		      		<div class="col-xs-12 col-md-12 ourSponsors">PLATINUM SPONSORS</div>
+		      	</div>
+				<div class="row-fluid platinum">
+					<div class="col-xs-4 col-md-4">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+
+					</div>
+					<div class="col-xs-4 col-md-4">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-4 col-md-4">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+				</div>
+				<div class="row sponTitle">
+		      		<div class="col-xs-12 col-md-12 ourSponsors">GOLD SPONSORS</div>
+		      	</div>
+				<div class="row-fluid platinum">
+					<div class="col-xs-3 col-md-3">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+
+					</div>
+					<div class="col-xs-3 col-md-3">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-3 col-md-3">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-3 col-md-3">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+				</div>
+				<div class="row sponTitle">
+		      		<div class="col-xs-12 col-md-12 ourSponsors">SILVER SPONSORS</div>
+		      	</div>
+				<div class="row-fluid platinum">
+					<div class="col-xs-2 col-md-2">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+
+					</div>
+					<div class="col-xs-2 col-md-2">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-2 col-md-2">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-2 col-md-2">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+
+					</div>
+					<div class="col-xs-2 col-md-2">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-2 col-md-2">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+				</div>
+				<div class="row sponTitle">
+		      		<div class="col-xs-12 col-md-12 ourSponsors">BRONZE SPONSORS</div>
+		      	</div>
+				<div class="row-fluid platinum">
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					<div class="col-xs-1 col-md-1">
+						<img class="center-block sponimg"src="0001242_your-logo-here.jpeg">
+					</div>
+					</div>
+					
+				</div>
+				
+		    	
+			
+			
+			
+			
+
+			
+
+		    <div class="col-xs-12 col-md-12 colspon" style="background-color:black">
+				
+				<div class="row social media">
+		      		<div class="col-xs-4 col-md-4 bubbles">
+			      		<div class="row">
+			      			<div class="col-xs-4 col-md-4">
+			      				<img src="facebook-icon small.png">
+			      			</div>
+
+			      			<div class="col-xs-4 col-md-4">
+			      				<img src="instagram-icon small.png">
+			      			</div>
+
+			      			<div class="col-xs-4 col-md-4">
+			      				<img src="twitter-icon small.png">
+			      			</div>
+			      		</div>
+		      		</div>
+		      		
+		      		<div class="col-xs-4 col-md-4 ">
+		      			<div class="row">
+			      			<div class="col-xs-12 col-md-12">
+		      					<span class="glyhelp"><span class="glyphicon glyphicon-earphone" style="font-size: 3em;"></span></span>
+		      				</div>
+		      			</div>
+		      			
+		      		</div>
+		      		<div class="col-xs-4 col-md-4 ">
+		      			<span class="glyhelp"><span class="glyphicon glyphicon-envelope" style="font-size: 3em;"></span></span>
+		      			
+		      		</div>
+		      	</div>
+		    </div>
+		    
+      	</div>
+
+	</body>
+
+</html>

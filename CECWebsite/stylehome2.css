@@ -1,0 +1,201 @@
+html ,body
+{
+	font-family:"Helvetica", "Helvetica Neue", "Arial";
+	
+	background-image:  url('McGill_Arts_Building2.jpg');
+	background-size: contain;
+
+
+}
+.ontop
+{
+	position: absolute;
+	width: 10%;
+	left: 5%;
+	top: 2em;
+	background-color: transparent;
+	border-radius: 0px;
+	z-index: 1;
+}
+
+.options
+{
+	background-color: black;
+	border-radius: 10px;
+	color: red;
+
+}
+.options >li>a
+{
+	color: red;	
+}
+
+.top
+{
+	
+	height: 5em;
+}
+.topBar
+{
+	background-color: black;
+	border: 2px solid rgba(255, 0, 0, .5);
+	
+	width: 95%;
+	margin: auto;
+	
+}
+.logoImg
+{
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left:  auto;
+	margin-right: auto;
+	width: auto;
+	height: 70%;
+}
+#countdown
+{
+	font-weight: bold;
+	float: right;
+	opacity: 1; 
+	background:  rgba(0, 0, 0, .5);;  
+}
+#count
+{
+	font-weight: bold;
+	float: right;
+	opacity: .5;   
+}
+
+.nav-tabs, .nav-pills {
+	height: 100%;
+	width: 100%;
+	padding-left: 15%;
+    text-align:center;
+    border-bottom: none;
+    float: left;    
+}
+.nav-pills > li{
+	height: 100%;
+}
+.nav-pills > li > a {
+    text-align: center;
+    
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color:  red;
+   
+}
+.nav-pills > li > a:hover,
+.nav-pills>li.active>a
+{
+	color: red;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover {
+    background-color: white;
+}
+#carousel-example-generic
+{
+	display: block;
+	padding-top: 0em;
+	padding-bottom: 0em;
+    margin-left: auto;
+    margin-right: auto ;
+    height: 500px;
+    width: 80%;
+}
+.aboutpic
+{
+	
+	max-height: 400px;
+	border-radius: 25px;
+	display: block;
+	margin: auto;
+}
+.abouttext
+{
+	max-height: 500px;
+	background-color: rgba(0,0,0,.75);
+	border-radius: 25px;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	overflow: auto;
+	color: red;
+	font-weight: bold;
+	
+}
+.rest
+{
+	margin-top: 1em; 
+}
+.slides
+{
+	padding-top: 0em;
+	padding-bottom: 0em;
+	padding-left: 0px;
+	background-image:  url('long.png');
+	background-size: cover;
+	border-radius: 25px;
+}
+.item img
+{
+    width: auto;
+    border-radius: 25px;
+    max-height: 500px;
+
+} 
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+.bottom
+{
+	z-index: -2;
+}
+.colspon
+{
+	height: 100%;
+}
+.sponTitle
+{
+	height: 20%;
+}
+.ourSponsors
+{
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 3em;
+	color: white;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: red;
+}
+.bottomSpon
+{
+	height: 80%;
+}
+.sponimg
+{
+	display: block;
+	margin: auto;
+	width: 90%;
+	height: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.bubbles img
+{
+	display: block;
+	margin: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+.glyhelp
+{
+	display: block;
+	margin-left: 5em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	
+}

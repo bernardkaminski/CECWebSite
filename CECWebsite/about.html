@@ -3,71 +3,54 @@
 	<head>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="stylehome2.css"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <link rel="stylesheet" href="assets/countdown/jquery.countdown.css" />
+        
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script>
-						var end = new Date('02/19/2016 10:1 AM');
-
-						    var _second = 1000;
-						    var _minute = _second * 60;
-						    var _hour = _minute * 60;
-						    var _day = _hour * 24;
-						    var timer;
-
-						    function showRemaining() {
-						        var now = new Date();
-						        var distance = end - now;
-						        if (distance < 0) {
-
-						            clearInterval(timer);
-						            document.getElementById('countdown').innerHTML = 'EXPIRED!';
-
-						            return;
-						        }
-						        var days = Math.floor(distance / _day);
-						        var hours = Math.floor((distance % _day) / _hour);
-						        var minutes = Math.floor((distance % _hour) / _minute);
-						        var seconds = Math.floor((distance % _minute) / _second);
-
-						        document.getElementById('countdown').innerHTML = 'countdown<br>'+days + ':';
-						        document.getElementById('countdown').innerHTML += hours + ':';
-						        document.getElementById('countdown').innerHTML += minutes + ':';
-						        if (seconds<10) 
-						        	{
-						        		document.getElementById('countdown').innerHTML += '0'+seconds  ;
-						        	} 
-						        else{
-						        		document.getElementById('countdown').innerHTML += seconds + ''
-						        	};
-						        
-						    }
-
-						    timer = setInterval(showRemaining, 1000);
-
-		</script>
+		
 		<script>
 			function myFunction(what,src) 
 			{
 				switch(what) {
 				    case '1':
-				        document.getElementById('members1').style.display='none';
-						document.getElementById('abouts').style.display='inline';
-						document.getElementById('aboutpic').src = src;
+				    	document.getElementById('picked').innerHTML ='Planning Commitee';
+				        document.getElementById('members1').style.display='inline';
+				        document.getElementById('members2').style.display='inline';
+				        document.getElementById('members3').style.display='inline';
+						document.getElementById('abouts').style.display='none';
+						
 
 				        break;
 				    case '2':
-				        document.getElementById('members1').style.display='inline';
-						document.getElementById('abouts').style.display='none';
+				    	document.getElementById('picked').innerHTML ='McGill University';
+				    	document.getElementById('about').innerHTML ='McGill'; 
+			    		document.getElementById('text').innerHTML ="McGill University is the oldest university in Montréal, founded in 1821 by James McGill.After many years of legal battles, the first classes began on September 6, 1843. Since its beginnings, McGill can boast many achievements, including the invention basketball, and competing in the world's first football game against Harvard. The university also counts ten Nobel Prize winners, the most of any university in Canada, whose contributions include the theory of electron transfer and the technology behind digital cameras. Today, McGill University is a leader, with about 40,000 students, including ungraduated and graduate, in a wide range of programs. The Faculty of Engineering at McGill is has been a national leader since it began in 1931, and today comprises six departments, two school, and three institutes.";
+				        document.getElementById('members1').style.display='none';
+				        document.getElementById('members2').style.display='none';
+				        document.getElementById('members3').style.display='none';
+						
+				        document.getElementById('abouts').style.display='inline';
+				        document.getElementById('aboutpic').src = src;
+						
+				        break;
+				         case '3':
+				    	document.getElementById('picked').innerHTML ='Montreal';
+				    	document.getElementById('about').innerHTML ='Montreal, Quebec'; 
+			    		document.getElementById('text').innerHTML ="McGill University’ main campus is located in the heart of Montreal's downtown. Having a rich history, it is the home to hundreds of festivals that give it its vibrant energy. Montreal also has an underground city: there is a maze of tunnels that cover more than 18 miles. It is also home to six post-secondary education institutes.";
+				        document.getElementById('members1').style.display='none';
+				        document.getElementById('members2').style.display='none';
+				        document.getElementById('members3').style.display='none';
+						
+				        document.getElementById('abouts').style.display='inline';
+				        document.getElementById('aboutpic').src = src;
 						
 				        break;
 				    default:
 				        
 				}
-
-
-				
-
-    			 
+ 
 			}
 		</script>
 		<title>CEC McGill</title>
@@ -78,21 +61,7 @@
 		<div class="ontop">
 			<div class="row logo">
 		        <div class="col-xs-12 col-md-12">
-		        	<img src="McGill_University_CoA.svg.png" style="width:100%;">
-		        	<ul class="nav nav-list options">
-					  <!--<li class="nav-header">List header</li>-->
-					  <li class="active" onclick="myFunction('2','McGill_University_CoA.svg.png')"><a href="#" >Planning Commitee</a></li>
-					  <li class="nav-divider" style="background-color:red;"></li>
-					  <li onclick="myFunction('1','McGill_University_CoA.svg.png')"><a href="#">McGill</a></li>
-					  <li class="nav-divider" style="background-color:red;"></li>
-					  <li onclick="myFunction('1','group.jpg')"><a href="#">Hotel</a></li>
-					  <li class="nav-divider" style="background-color:red;"></li>
-					  <li onclick="myFunction('1','group.jpg')"><a href="#">CEC</a></li>
-					  <li class="nav-divider" style="background-color:red;"></li>
-					  <li onclick="myFunction('1','McGill_University_CoA.svg.png')"><a href="#">Montreal</a></li>
-					  
-					  
-					</ul>
+		        	<img src="cec2016logo.png" style="width:100%;">
 		        </div>
 		    </div>
 
@@ -100,14 +69,15 @@
 
 
 		<div class="top">
-				<div class="timer">
-				<h3 id="countdown" style="color:red;margin-top:0px;margin-bottom:1em;"></h3>
-				</div>
+			<div id="countdown"></div>
+				<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="assets/countdown/jquery.countdown.js"></script>
+		<script src="assets/js/script.js"></script>
       		
 		</div>
 		
-		<div class="row topBar" id="topBar" style="height:10%;">
-		        <div id="pills" class="col-xs-12 col-md-12" style="margin-bottom:4px;">
+		<div class="row topBar" id="topBar" style="height:15%;">
+		        <div id="pills" class="col-xs-11 col-md-11 col-md-offset-1" style="margin-bottom:4px;margin-left:7%">
 		        	
 		        	<ul class="nav nav-pills nav-justified">
 
@@ -125,25 +95,43 @@
 
 		        </div>
       		</div>
+      	<div class="row optionBar" style="height:30px;">
+      		<div class="col-xs-12 col-md-12 options" style="height:100%;">
+      			<ul class="nav nav-tabs  height:100%;" >
+					  <!--<li class="nav-header">List header</li>-->
+					  <li class="" onclick="myFunction('1','group.jpg')"><a href="#">Planning Commitee</a></li>
+					  <li class="nav-divider" style="background-color:red;"></li>
+					  <li onclick="myFunction('2','McGill_University,_Winter.jpg')"><a href="#">About McGill</a></li>
+					  <li class="nav-divider" style="background-color:red;"></li>
+					  <li onclick="myFunction('McGill_University_CoA.svg.png')"><a href="#">About Hotel</a></li>
+					  <li class="nav-divider" style="background-color:red;"></li>
+					  <li onclick="myFunction('3','montreal.jpg')"><a href="#">About Montreal</a></li>
+					  <li class="nav-divider" style="background-color:red;"></li>
+					</ul>
+			</div>
+      	</div>
 
-      	<div class="row rest" style="width:100%">
-      		
-			
-			
-			<div class="col-xs-10 col-md-10 col-md-offset-2"id="members1">
+      	<div class="row picked "  style="width:100%">
+      		<div class="col-xs-12 col-md-12" style="text-align:center;color:white;">
+      			<h2 id="picked" style="font-size:3em;"> Planning Commitee</h2>
+      		</div>
+      	</div>
+      	<div class="row rest" style="width:100%" id="test">
+
+      		<div class="col-xs-12 col-md-12 "id="members1">
 				<div class="row-fluid members1" >
-					<div class="col-xs-4 col-md-4">
+					<div class="col-xs-3 col-md-3 col-centered" style="margin:0 auto; float:none;">
 						<div class="row sponTitle">
-			      			<div class="col-xs-12 col-md-12 ourSponsors">Position</div>
+			      			<div class="col-xs-12 col-md-12 ourSponsors"><h3 style="font-size:2em; color:white;">Chair</h3></div>
 			      		</div>
 			      		<div class="row pic">
-			      			<img src="profile.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
+			      			<img src="profilepics/chair.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
 			      		</div>
 			      		<div class="row button" style="text-align: center;">
 			      			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="width:80%;">more</a>
 			      			<div class="collapse" id="collapseExample">
-							  <div class="well" style="height:100px;">
-							    stuff about person
+							  <div class="well" style="height:100px;overflow: auto;">
+							    <p style="font-size:1.3em;">Dean is the Chair of CEC 2016. He is a U3 mechanical engineering student who was born and raised in Montreal. Dean is highly involved in the McGill Engineering Undergraduate Society and been a part of several school initiatives, such as leading committees at McGill's annual Model United Nations conference (McMUN). Apart from his extra-curricular involvement, Dean is also an avid sports fan. He played competitive rugby for five years and rowed for two years. However, he has now retired from competitive sports and has moved on to simpler things. During the summer, Dean can often be found on the golf course, while during the winter on the ski slopes. Now, he is happier than ever to be part the the 2016 Canadian Engineering Competition and can't wait to see how it pans out!</p>
 							  </div>
 							</div>
 
@@ -151,18 +139,43 @@
 
 			      		
 			      	</div>
-			      	<div class="col-xs-4 col-md-4">
+			      </div>
+			    </div>
+			
+			
+			<div class="col-xs-12 col-md-12 "id="members2">
+				<div class="row-fluid members1" >
+					<div class="col-xs-3 col-md-3">
 						<div class="row sponTitle">
-			      			<div class="col-xs-12 col-md-12 ourSponsors">Position</div>
+			      			<div class="col-xs-12 col-md-12 ourSponsors"><h3 style="font-size:2em; color:white;">Leader Of Fun</h3></div>
 			      		</div>
 			      		<div class="row pic">
-			      			<img src="profile.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
+			      			<img src="profilepics/leaderOfFun.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
+			      		</div>
+			      		<div class="row button" style="text-align: center;">
+			      			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExamplel" aria-expanded="false" aria-controls="collapseExample" style="width:80%;">more</a>
+			      			<div class="collapse" id="collapseExamplel">
+							  <div class="well" style="height:100px;">
+							    <p style="font-size:1.3em;"></p>
+							  </div>
+							</div>
+
+			      		</div>
+
+			      		
+			      	</div>
+			      	<div class="col-xs-3 col-md-3">
+						<div class="row sponTitle">
+			      			<div class="col-xs-12 col-md-12 ourSponsors"><h3 style="font-size:2em; color:white;">VP Operations</h3></div>
+			      		</div>
+			      		<div class="row pic">
+			      			<img src="profilepics/operationsvp.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
 			      		</div>
 			      		<div class="row button"style="text-align: center;">
 			      			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample"style="width:80%;">more</a>
 			      			<div class="collapse" id="collapseExample2">
 							  <div class="well" style="height:100px;">
-							    stuff about person
+							    <p style="font-size:1.3em;">Matthew is in his 3rd year of Engineering at McGill. He has been involved with various student groups starting from his first days at McGill but has become a lot more active in the last year. After participating in QEC in 2014 he excitedly joined the 2016 CEC organizing committee. In his spare time Matthew enjoys learning random trivia and being an avid photographer. </p>
 							  </div>
 							</div>
 
@@ -170,18 +183,37 @@
 
 			      		
 			      	</div>
-			      	<div class="col-xs-4 col-md-4">
+			      	<div class="col-xs-3 col-md-3">
 						<div class="row sponTitle">
-			      			<div class="col-xs-12 col-md-12 ourSponsors">Position</div>
+			      			<div class="col-xs-12 col-md-12 ourSponsors"><h3 style="font-size:2em; color:white;">VP Adjoint Operations</h3></div>
 			      		</div>
 			      		<div class="row pic">
-			      			<img src="profile.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
+			      			<img src="profilepics/operationsadjointvp.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
 			      		</div>
 			      		<div class="row button" style="text-align: center;">
 			      			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample"style="width:80%;">more</a>
 			      			<div class="collapse" id="collapseExample3">
 							  <div class="well" style="height:100px;">
-							    stuff about person
+							    <p style="font-size:1.3em;">Dedicated, smart and aggressive. Jacob is ready to plan help organize the best Canadian Engineering Competition yet. Born and raised in Montreal, and now studying chemical engineering at McGill, Jacob knows this city like the back of his hand. Outside of school he loves all sports, especially the Montreal Canadiens and Toronto Blue Jays. He is excited to be part of the team that brings young, smart and talented engineers together and cannot wait to see what they come up with. </p>
+							  </div>
+							</div>
+
+			      		</div>
+
+			      		
+			      	</div>
+			      	<div class="col-xs-3 col-md-3">
+						<div class="row sponTitle">
+			      			<div class="col-xs-12 col-md-12 ourSponsors"><h3 style="font-size:2em; color:white;">VP Adjoint Finance</h3></div>
+			      		</div>
+			      		<div class="row pic">
+			      			<img src="profilepics/financeadjointvp.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
+			      		</div>
+			      		<div class="row button" style="text-align: center;">
+			      			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample"style="width:80%;">more</a>
+			      			<div class="collapse" id="collapseExample4">
+							  <div class="well" style="height:100px;">
+							    <p style="font-size:1.3em;">Born in Calgary and raised in Texas, Ian comes from the Wild Wild West and a family full of mechanical engineers. He enjoys running, making terrible puns, and quoting Zoolander.  A little known fact is that he is able to ride a unicycle.  </p>
 							  </div>
 							</div>
 
@@ -190,28 +222,80 @@
 			      		
 			      	</div>
 				</div>
+			</div>
+			<div class="col-xs-12 col-md-12"id="members3">
+				<div class="row-fluid members1" >
+					<div class="col-xs-4 col-md-4">
+						<div class="row sponTitle">
+			      			<div class="col-xs-12 col-md-12 ourSponsors"><h3 style="font-size:2em; color:white;">VP Compitition</h3></div>
+			      		</div>
+			      		<div class="row pic">
+			      			<img src="profilepics/compititionvp.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
+			      		</div>
+			      		<div class="row button" style="text-align: center;">
+			      			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample" style="width:80%;">more</a>
+			      			<div class="collapse" id="collapseExample5">
+							  <div class="well" style="height:100px;">
+							    <p style="font-size:1.3em;"></p>
+							  </div>
+							</div>
+
+			      		</div>
+
+			      		
+			      	</div>
+			      	<div class="col-xs-4 col-md-4">
+						<div class="row sponTitle">
+			      			<div class="col-xs-12 col-md-12 ourSponsors"><h3 style="font-size:2em; color:white;">VP Adjoint Compitition</h3></div>
+			      		</div>
+			      		<div class="row pic">
+			      			<img src="profilepics/compititionadjointvp.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
+			      		</div>
+			      		<div class="row button"style="text-align: center;">
+			      			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample6" aria-expanded="false" aria-controls="collapseExample"style="width:80%;">more</a>
+			      			<div class="collapse" id="collapseExample6">
+							  <div class="well" style="height:100px;">
+							    <p style="font-size:1.3em;"></p>
+							  </div>
+							</div>
+
+			      		</div>
+
+			      		
+			      	</div>
+			      	<div class="col-xs-4 col-md-4">
+						<div class="row sponTitle">
+			      			<div class="col-xs-12 col-md-12 ourSponsors"><h3 style="font-size:2em; color:white;">VP Adjoint Communications</h3></div>
+			      		</div>
+			      		<div class="row pic">
+			      			<img src="profilepics/communicationsadjointvp.jpg" style="border-radius:100px;width:90%;display: block;margin:auto;">
+			      		</div>
+			      		<div class="row button" style="text-align: center;">
+			      			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample7" aria-expanded="false" aria-controls="collapseExample"style="width:80%;">more</a>
+			      			<div class="collapse" id="collapseExample7">
+							  <div class="well" style="height:100px;">
+							    <p style="font-size:1.3em;">Melanie grew up in Ottawa, Ontario, and moved to Montreal to study mining engineering at McGill, where she is currently in her second year. Since she started the program, she has been involved in many extra-curricular activities, such as leading study groups for math and physics courses, and being the Mining and Materials Engineering Representative for NOBE McGill.
+								She was looking to increase her involvement with the engineering community at McGill when she joined the CEC 2016 Bidding Committee in fall 2014, which is not the CEC 2016 Planning Committee.</p>
+							  </div>
+							</div>
+
+			      		</div>
+
+			      		
+			      	</div>
+			      	
+				</div>
 			</div>	
 
-			<div class="col-xs-10 col-md-10 col-md-offset-2"id="abouts" style="display:none;">
+			<div class="col-xs-12 col-md-12 "id="abouts" style="display:none;margin-top:1em;">
 				<div class="row">
 					<div class="col-md-12">
-					<img class="aboutpic" id="aboutpic" src="group.jpg">
+					<img class="aboutpic" id="aboutpic" src="">
 					</div>
 					<div class="col-md-12 abouttext">
-                  <h2>About Us</h2>
-                  <p>
-                   Speak the speech, I pray you, as I pronounc'd it to you, 
-					trippingly on the tongue. But if you mouth it, as many of our 
-					players do, I had as live the town crier spoke my lines. Nor do 1885
-					not saw the air too much with your hand, thus, but use all 
-					gently; for in the very torrent, tempest, and (as I may say) 
-					whirlwind of your passion, you must acquire and beget a 
-					temperance that may give it smoothness. O, it offends me to the 
-					soul to hear a robustious periwig-pated fellow tear a passion to 1890
-					tatters, to very rags, to split the cars of the groundlings, who 
-					(for the most part) are capable of nothing but inexplicable dumb 
-					shows and noise. I would have such a fellow whipp'd for o'erdoing 
-					Termagant. It out-herods Herod. Pray you avoid it.
+                  <h2 id="about">About Us</h2>
+                  <p id="text">
+                  
                   </p>  
                 </div>		
 
@@ -221,17 +305,10 @@
 
 		    	
 			</div>
-				
-				
-			
-			
-			
-			
-
 			<div class="col-xs-12 col-md-12 colspon" style="background-color:rgba(0, 0, 0, 0.5);margin-top:1em;">
 				
 				<div class="row sponTitle">
-		      		<div class="col-xs-12 col-md-12 ourSponsors">OUR SPONSORS</div>
+		      		<div class="col-xs-12 col-md-12 ourSponsors" style="text-align:center;color:white;"><h2 id="picked" style="font-size:3em;"> Sponsors</h2></div>
 		      	</div>
 
 				<div class="row bottomSpon">
@@ -264,16 +341,27 @@
 		      		
 		      		<div class="col-xs-4 col-md-4 ">
 		      			<div class="row">
-			      			<div class="col-xs-12 col-md-12">
+			      			<div class="col-xs-4 col-md-4">
 		      					<span class="glyhelp"><span class="glyphicon glyphicon-earphone" style="font-size: 3em;"></span></span>
+		      					 
+		      				</div>
+		      				<div class="col-xs-8 col-md-8">
+		      					<p style="color:white;font-size:2em;margin-top:1em;">555-555-5555</p>
 		      				</div>
 		      			</div>
 		      			
 		      		</div>
 		      		<div class="col-xs-4 col-md-4 ">
-		      			<span class="glyhelp"><span class="glyphicon glyphicon-envelope" style="font-size: 3em;"></span></span>
-		      			
+		      			<div class="row">
+			      			<div class="col-xs-4 col-md-4">
+		      					<span class="glyhelp"><span class="glyphicon glyphicon-envelope" style="font-size: 3em;"></span></span>
+		      				</div>
+		      				<div class="col-xs-8 col-md-8">
+		      					<p style="color:white;font-size:2em;margin-top:1em;">email@email.com</p>
+		      				</div>
+		      			</div>
 		      		</div>
+		      		
 		      	</div>
 		    </div>
 		    
